@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="Welcome to the Super Admin Panel of Car Dealer" />
+    <meta name="author" content="Techhowdy" />
+    <!-- Favicon icon -->
+    <link href="~/images/favicon.png" rel="icon" type="image/png" />
+    <environment include="Development">
+        <!-- Custom CSS -->
+
+        <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/lib/custom/style.css" rel="stylesheet" />
+        <!-- Font Awesome J -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        <link rel="stylesheet" href="~/StyleSheet.css">
+    </environment>
+    <environment exclude="Development">
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    </environment>
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+    <!-- ============================================================== -->
+    <!-- Main wrapper -->
+    <!-- ============================================================== -->
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar" class="navbar-light bg-white topbar mb-4 static-top shadow">
+            <div class="sidebar-header bg-white ">
+                <h3 class="brand">DharaSoft<sup>.com</sup></h3>
+                <strong class="brand">DS</strong>
+            </div>
+
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <hr class="sidebar-divider">
+                <li>
+                    <a href="#pcaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-images"></i>
+                        PCA
+                    </a>
+                    <ul class="collapse list-unstyled" id="pcaSubmenu">
+                        <div class="innerList">
+                            <li>
+                                <a asp-controller="FeaturedSlider" asp-action="Index">Featured Slider</a>
+                            </li>
+                            <li>
+                                <a href="#">Featured Brands</a>
+                            </li>
+                            <li>
+                                <a href="#">Clearance</a>
+                            </li>
+                            <li>
+                                <a href="#">On Sale</a>
+                            </li>
+                        </div>
+                        <hr class="sidebar-divider">
+                    </ul>
+                </li>
+                <li>
+                    <a href="#productSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fab fa-product-hunt"></i>
+                        Products
+                    </a>
+                    <ul class="collapse list-unstyled" id="productSubmenu">
+                        <div class="innerList">
+                            <li>
+                                <a href="#">Products Inventory</a>
+                            </li>
+                            <li>
+                                <a href="#">Add Product</a>
+                            </li>
+                        </div>
+                        <hr class="sidebar-divider">
+                    </ul>
+                    <a href="#catSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-copy"></i>
+                        Category
+                    </a>
+                    <ul class="collapse list-unstyled" id="catSubmenu">
+                        <div class="innerList">
+                            <li>
+                                <a href="#">All Categories</a>
+                            </li>
+                            <li>
+                                <a href="#">Add Category</a>
+                            </li>
+                        </div>
+                        <hr class="sidebar-divider">
+                    </ul>
+                </li>
+                <li>
+                    <a href="#brandSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="far fa-copyright"></i>
+                        Brands
+                    </a>
+                    <ul class="collapse list-unstyled" id="brandSubmenu">
+                        <div class="innerList">
+                            <li>
+                                <a href="#">All Brands</a>
+                            </li>
+                            <li>
+                                <a href="#">Add Brand</a>
+                            </li>
+                        </div>
+                        <hr class="sidebar-divider">
+                    </ul>
+                </li>
+                <li>
+                    <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="far fa-user"></i>
+                        Users
+                    </a>
+                    <ul class="collapse list-unstyled" id="userSubmenu">
+                        <div class="innerList">
+                            <li>
+                                <a href="#">All Users</a>
+                            </li>
+                            <li>
+                                <a href="#">Add User</a>
+                            </li>
+                            <li>
+                                <a href="#">User Roles</a>
+                            </li>
+                        </div>
+                        <hr class="sidebar-divider">
+                    </ul>
+                </li>
+                <li>
+                    <a href="#blogSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-blog"></i>
+                        Blogs
+                    </a>
+                    <ul class="collapse list-unstyled" id="blogSubmenu">
+                        <div class="innerList">
+                            <li>
+                                <a href="#">All Blogs</a>
+                            </li>
+                            <li>
+                                <a href="#">Add Blog</a>
+                            </li>
+                        </div>
+                        <hr class="sidebar-divider">
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-file-csv"></i>
+                        Reports
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-file-code"></i>
+                        Logs
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-question"></i>
+                        FAQ
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-paper-plane"></i>
+                        Contact
+                    </a>
+                </li>
+                <hr class="sidebar-divider">
+            </ul>
+
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                <!-- Sidebar Toggle (Topbar) -->
+                <button type="button" id="sidebarCollapse" class="btn btn-link rounded-circle mr-3">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Topbar Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <div class="topbar-divider d-none d-sm-block"></div>
+
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">DharaSoft</span>
+                            <img class="img-profile rounded-circle" src="~/images/pic.png">
+                        </a>
+                        <!-- Dropdown - User Information -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Profile
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item" href="#">
+                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Activity Log
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <div class="container-fluid bg-white shadow">
+
+                @RenderBody()
+
+            </div>
+            <footer class="container-fluid fixed-bottom">
+                <div class="copyright text-center my-auto">
+                    <span> Admin Panel Created By <a href="https://DharaSoft.com">DharaSoft<sup>&copy;</sup>2019</a></span>
+                </div>
+            </footer>
+
+        </div>
+
+
+    </div>
+
+
+    <environment include="Development">
+        <script src="~/lib/jquery/jquery.min.js"></script>
+        <!-- Bootstrap tether Core JavaScript -->
+        <script src="~/lib/popper.js/umd/popper.min.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Custom JS -->
+        <script src="~/lib/js/admin.js"></script>
+
+    </environment>
+    <environment exclude="Development">
+        <script src="~/lib/jquery/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
